@@ -1,12 +1,14 @@
-<div style="text-align: center">
+<div align="center">
 	<img style="margin-bottom: 20px" src="https://i.ibb.co/Y7y2gjm/Frame-1-3.png" alt="sad" width="250" height="250"/>
+    <br>
 	<div>
 		<img src="https://img.shields.io/github/issues/rzkytmgr/WhatsApp-Bot">
 		<img src="https://img.shields.io/github/stars/rzkytmgr/WhatsApp-Bot">
 		<img src="https://img.shields.io/github/stars/rzkytmgr/WhatsApp-Bot">
 		<img src="https://img.shields.io/github/forks/rzkytmgr/WhatsApp-Bot?label=Forks">
 	</div>
-    <div style="display: flex; flex-direction: column">
+    <br>
+    <div align="center">
         <h3>
             Donate
         </h3>
@@ -16,6 +18,7 @@
         </a>
             🎉 
         </span>
+        <br>
         <span>🎊
         <a href="https://saweria.co/rzkytmgr">
             Saweria.co
@@ -24,7 +27,6 @@
         </span>
     </div>
 </div>
-
 
 **Jump to :**
 
@@ -36,25 +38,19 @@
 
 ---
 
-**WhatsApp-Bot** **(SadBot)** - This section will explain to you and guide you what you must do before using this *nodejs* bot on your local computer, show you all bot features, troubleshooting, etc.
-
-
+**WhatsApp-Bot** **(SadBot)** - This section will explain to you and guide you what you must do before using this _nodejs_ bot on your local computer, show you all bot features, troubleshooting, etc.
 
 **Make an issue when you have a problem or found a bug when using this bot**
-
-
 
 ---
 
 ## Guide
 
-***Requirements :*** 
+**_Requirements :_**
 
 - Node.Js >= 12.18.3
 - [ffmpeg](https://ffmpeg.org/)
 - Google Chrome
-
-
 
 Step by step to start the bot :
 
@@ -68,20 +64,20 @@ Step by step to start the bot :
 
 3. Open directory with your favorit code editor, then Change the `settings.js` code
 
-   - `prefix` - prefix bot commands *(default : !)*
+   - `prefix` - prefix bot commands _(default : !)_
    - `owner` - owner bot number
    - `support` - bot group support
 
-4. change path to your ffmpeg bin on `./lib/function/youtube.js`  on line `23`
+4. change path to your ffmpeg bin on `./lib/function/youtube.js` on line `23`
 
    ```javascript
    const downloadOptions = {
-       ffmpegPath: '/usr/bin/ffmpeg', // change this to your ffmpeg bin path
-       outputPath: dir,
-       youtubeVideoQuality: 'highestaudio',
-       queueParallelism: 2,
-       progressTimeout: 2000,
-       allowWebm: false,
+     ffmpegPath: '/usr/bin/ffmpeg', // change this to your ffmpeg bin path
+     outputPath: dir,
+     youtubeVideoQuality: 'highestaudio',
+     queueParallelism: 2,
+     progressTimeout: 2000,
+     allowWebm: false,
    };
    ```
 
@@ -95,8 +91,6 @@ Step by step to start the bot :
 
 7. Scan QR code with you phone. done!
 
-
-
 **Summary :**
 
 ```bash
@@ -106,15 +100,11 @@ $ npm install
 $ npm start
 ```
 
-
-
 ## Features
 
 All features/Bot Commands
 
-*Default prefix :* !
-
-
+_Default prefix :_ !
 
 **Bot Owner Commands :**
 
@@ -130,16 +120,12 @@ All features/Bot Commands
 |    !ban     |   OK   |          *https://bit.ly/34IDvrD*           |
 | !freespace  |   OK   |          *https://bit.ly/34IDvrD*           |
 
-
-
 **Group Owner Commands :**
 
 | Commands | Status |         Description         |
 | :------: | :----: | :-------------------------: |
 | !kickall |   OK   | Kick all members on a group |
 |  !start  |   OK   |  *https://bit.ly/34IDvrD*   |
-
-
 
 **Group Admin Commands :**
 
@@ -153,8 +139,6 @@ All features/Bot Commands
 |  !revoke   |   OK   | revoke group invite link |
 |   !link    |   OK   |  get group invite link   |
 | !startvote |   OK   | *https://bit.ly/34IDvrD* |
-
-
 
 **Group Member Commands :**
 
@@ -172,8 +156,6 @@ All features/Bot Commands
 |  !richman   |   OK   |        *https://bit.ly/34IDvrD*        |
 |    !pick    |   OK   |    Pick random guy on related group    |
 
-
-
 **General Commands (Personal/Group Message) :**
 
 |    Commands    |   Status    |                Description                |
@@ -186,7 +168,7 @@ All features/Bot Commands
 |    !quotes     | Coming soon |                     -                     |
 |   !makequote   |     OK      |            Make a image quote             |
 |     !mirip     |     OK      |                     -                     |
-|      !gay      |     OK      |            Get g*y percentage             |
+|      !gay      |     OK      |            Get g\*y percentage            |
 |    !brainly    |     OK      |          Get answer from bainly           |
 |    !sticker    |     OK      |         Convert image to sticker          |
 |  !gifsticker   |     OK      |      Convert video.mp4 to Gif Stiker      |
@@ -218,13 +200,9 @@ All features/Bot Commands
 
 [Read all detail commands here!](#wiki)
 
-
-
 ## Troubleshoting
 
 You can read all troubleshoting here, [Puppeteer Troubleshooting](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md)
-
-
 
 ## Contributors
 
@@ -235,4 +213,3 @@ You can read all troubleshoting here, [Puppeteer Troubleshooting](https://github
 </div>
 
 Read [CONTRIBUTING.md](https://github.com/rzkytmgr/WhatsApp-Bot/blob/master/CONTRIBUTING.md) to start make Pull request, Thanks to all contributors.
-
