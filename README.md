@@ -31,10 +31,10 @@
 **Jump to :**
 
 - [Guide](#guide)
-
 - [Features](#features)
 - [Troubleshoting](#troubleshoting)
 - [Contributors](#contributors)
+- [References](#references)
 
 ---
 
@@ -198,7 +198,7 @@ _Default prefix :_ !
 |    !weather    |     OK      |             Get weather info              |
 |     !movie     |     OK      |             Get a movie info              |
 
-[Read all detail commands here!](#wiki)
+[Read all detail commands here!]([https://github.com/rzkytmgr/WhatsApp-Bot/wiki/%5BGUIDE%5D-Using-Bot-Features](https://github.com/rzkytmgr/WhatsApp-Bot/wiki/[GUIDE]-Using-Bot-Features))
 
 ## Troubleshoting
 
@@ -212,4 +212,12 @@ You can read all troubleshoting here, [Puppeteer Troubleshooting](https://github
     </a>
 </div>
 
+
 Read [CONTRIBUTING.md](https://github.com/rzkytmgr/WhatsApp-Bot/blob/master/CONTRIBUTING.md) to start make Pull request, Thanks to all contributors.
+
+
+
+## References
+
+- [@open-wa](https://open-wa.github.io/wa-automate-nodejs/)
+
