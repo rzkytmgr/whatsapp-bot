@@ -1,0 +1,5 @@
+# node modules
+node_modules
+
+# data cookie
+SAD_CLIENT.data.json

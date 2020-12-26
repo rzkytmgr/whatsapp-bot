@@ -1,0 +1,25 @@
+{
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@open-wa/wa-automate": "^3.1.0",
+    "axios": "^0.21.0",
+    "brainly-scraper": "^1.0.3",
+    "chalk": "^4.1.0",
+    "fbvideos": "^1.0.2",
+    "lowdb": "^1.0.0",
+    "moment": "^2.29.1",
+    "scrape-yt": "^1.4.7",
+    "solenolyrics": "^5.0.0",
+    "wikipedia": "^1.0.1",
+    "youtube-mp3-downloader": "^0.7.6"
+  }
+}
