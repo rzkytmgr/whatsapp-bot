@@ -1,13 +1,17 @@
 {
   "name": "whatsapp-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bot WhatsApp - NodeJS whatsapp bot, many features Votekick, Video to Sticker, Image to Sticker, Cash system, Admin tools and many more",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Bot",
+    "whatsapp",
+    "whtasapp-bot"
+  ],
+  "author": "rzkytmgrr",
   "license": "ISC",
   "dependencies": {
     "@open-wa/wa-automate": "^3.1.0",
