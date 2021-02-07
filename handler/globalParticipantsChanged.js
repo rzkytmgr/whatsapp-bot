@@ -3,9 +3,10 @@ module.exports = async (client, event) => {
 
   const botNumber = await client.getHostNumber();
 
-  if (action === "add") {
-    return await client.sendTextWithMentions(chat, `Selamat datang di Welcome, @${who.split("@")[0]}`);
+  if (action === 'add') {
+    console.log('bug!!!!');
   } else {
-    return await client.sendTextWithMentions(chat, `Selamat Jalan @${who.split("@")[0]} semoga diterima di sisi yang maha kuasa`);
+    if (who === botNumber) return;
+    return await client.sendTextWithMentions(chat, `Selamat Jalan @${who.split('@')[0]} semoga diterima di sisi yang maha kuasa`);
   }
 };
