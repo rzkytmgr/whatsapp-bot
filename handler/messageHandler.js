@@ -32,6 +32,7 @@ module.exports = async (client, message) => {
      */
 
     const validMessage = caption ? caption : body;
+
     if (!validMessage || validMessage[0] != botPrefix) return;
 
     const command = validMessage.trim().split(' ')[0].slice(1);
@@ -40,13 +41,20 @@ module.exports = async (client, message) => {
     const urlRegex = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
 
     // debug
-    console.debug(color('green', '➜'), color('yellow', isGroup ? '[GROUP]' : '[PERSONAL]'), `!${command} | ${sender.id} ${isGroup ? 'FROM ' + from : ''}`, color('yellow', moment().format()));
+    console.debug(color('green', '➜'), color('yellow', isGroup ? '[GROUP]' : '[PERSONAL]'), `!${command} | ${sender.id} ${isGroup ? 'FROM ' + formattedTitle : ''}`, color('yellow', moment().format()));
 
     /**
      * Premium code / feature
      * Kamu bisa melakukan donasi terlebih dahulu untuk mendapatkan seluruh kode
      * lakukan donasi melalui link ini https://bit.ly/34IDvrD
      */
+
+    if (isGroup) {
+      if (groupMetadata.participants.length < 10 && !botOwner.includes(groupMetadata.owner)) {
+        await client.reply(from, `_⚠️ Ooops... maaf untuk menghidari grup SPAM, bot hanya dapat di gunakan di grup yang mempunyai member lebih dari 7, sedangkan member grup kamu hanya ada *${groupMetadata.participants.length}*_\n\n_Untuk informasi lebih lanjut silahkan tanyakan saya di instagram *@rzkytmgrr*_`, id);
+        return client.leaveGroup(from);
+      }
+    }
 
     const allChats = await client.getAllChats();
     switch (command) {
@@ -81,6 +89,12 @@ module.exports = async (client, message) => {
          * Kamu bisa melakukan donasi terlebih dahulu untuk mendapatkan seluruh kode
          * lakukan donasi melalui link ini https://bit.ly/34IDvrD
          */
+        break;
+
+      case 'owner':
+      case 'contact':
+      case 'ownerbot':
+        return await client.reply(from, '_👋 Hai, Mari berkomunikasi dengan owner, Instagram : *@rzkytmgrr*_', id);
         break;
 
       case 'clearall':
@@ -247,6 +261,7 @@ module.exports = async (client, message) => {
         if (isSilent) return await client.reply(from, `_🎉 Berhasil set grup ke-*${arguments[0].toLowerCase() === 'on' ? 'Admin Mode' : 'Everyone Mode'}*_`, id);
         break;
 
+      case 'p':
       case 'ping':
         if (!isGroup) return await client.reply(from, '_⛔ Perintah ini hanya dapat di-gunakan didalam grup!_', id);
         const allMembers = groupMetadata.participants.map((member) => `@${member.id.split('@')[0]}`);
@@ -325,8 +340,9 @@ module.exports = async (client, message) => {
 
       case 'pick':
         if (!isGroup) return await client.reply(from, '_⛔ Perintah ini hanya dapat di-gunakan didalam grup!_', id);
+        if (arguments.length < 1) return await client.reply(from, '_Contoh penggunaan perintah : !pick <sifat>_', id);
         const pickSomeone = groupMetadata.participants[Math.floor(Math.random() * groupMetadata.participants.length)];
-        await client.sendTextWithMentions(from, `_👦🏼 Orang acak didapatkan @${pickSomeone.id.split('@')[0]}_`);
+        await client.sendTextWithMentions(from, `_👦🏼 ${arguments.join(' ')} di grup ini adalah @${pickSomeone.id.split('@')[0]}_`);
         break;
 
       case 'voice':
@@ -339,8 +355,23 @@ module.exports = async (client, message) => {
         return await client.reply(from, _txt.menu, id);
         break;
 
+      case 'info':
+        return await client.reply(from, _txt.info, id);
+
+      case 'source':
+        return await client.reply(from, _txt.source, id);
+
       case 'rules':
         return await client.reply(from, _txt.rules, id);
+        break;
+
+      case 'faq':
+        return await client.reply(from, _txt.faq, id);
+        break;
+
+      case 'support':
+        await client.addParticipant(botGroup, sender.id);
+        return await client.reply(from, 'Kamu sudah ditambahkan kedalam Grup Official Bot Ini!');
         break;
 
       case 'donate':
@@ -349,9 +380,30 @@ module.exports = async (client, message) => {
         break;
 
       case 'quran':
-        if (arguments.length < 2 || arguments.length > 2) return await client.reply(from, '_⚠️ Contoh Penggunaan Perintah : !quran <surah> <ayat>_', id);
-        const getQuran = await _function.quran(arguments);
-        await client.reply(from, getQuran, id);
+      case 'quranayat':
+        if (arguments.length != 2) return await client.reply(from, '_⚠️ Contoh Penggunaan Perintah : !quranayat <surah> <ayat>_', id);
+        const ayah = await _function.quran.ayat(arguments);
+        await client.reply(from, ayah, id);
+        break;
+
+      case 'quransurah':
+        if (arguments.length != 1) return await client.reply(from, '_⚠️ Contoh Penggunaan Perintah : !quransurah <surah>_');
+        const surah = await _function.quran.surah(arguments);
+        await client.reply(from, surah, id);
+        break;
+
+      case 'murotal':
+      case 'murrotal':
+      case 'murottal':
+        if (arguments.length != 2) return await client.reply(from, '_⚠️ Contoh Penggunaan Perintah : !quranayat <surah> <ayat>_', id);
+        const murottalAudio = await _function.quran.murottal(arguments);
+        await client.sendPtt(from, murottalAudio, id);
+        break;
+
+      case 'tafsir':
+        if (arguments.length != 2) return await client.reply(from, '_⚠️ Contoh Penggunaan Perintah : !quranayat <surah> <ayat>_', id);
+        const tafsir = await _function.quran.tafsir(arguments);
+        await client.reply(from, tafsir, id);
         break;
 
       case 'quotes':
@@ -396,7 +448,7 @@ module.exports = async (client, message) => {
         if (!mimetype.includes('mp4')) return await client.reply(from, '_⚠️ Pastikan yang anda kirim adalah file video ber-ekstensi mp4_', id);
         const vidmediadata = await decryptMedia(message);
         const vidb64 = `data:${mimetype};base64,${vidmediadata.toString('base64')}`;
-        await client.sendMp4AsSticker(from, vidb64, { fps: 7, startTime: `00:00:00.0`, endTime: `00:00:05.0`, loop: 0 });
+        await client.sendMp4AsSticker(from, vidb64, { fps: 10, startTime: `00:00:00.0`, endTime: `00:00:05.0`, loop: 0 });
         break;
 
       case 'giphysticker':
@@ -434,6 +486,7 @@ module.exports = async (client, message) => {
          */
         break;
 
+      case 'musik':
       case 'music':
         if (arguments.length < 1) return await client.reply(from, '_⚠️ Contoh Penggunaan Perintah : !music <title>_', id);
         const musicLink = await _function.youtubeMusic(arguments.join(' '));
@@ -509,6 +562,7 @@ module.exports = async (client, message) => {
         await client.sendStickerfromUrl(from, teksLink);
         break;
 
+      case 'wikipedia':
       case 'wiki':
         if (arguments.length < 1) return await client.reply(from, '_⚠️ Contoh Penggunaan Perintah : !wiki <keywords>_', id);
         const getWiki = await _function.wiki(arguments.join(' '));
@@ -549,7 +603,7 @@ module.exports = async (client, message) => {
         break;
 
       default:
-        return console.debug(color('red', '➜'), color('yellow', isGroup ? '[GROUP]' : '[PERSONAL]'), `!${command} | ${sender.id} ${isGroup ? 'FROM ' + from : ''}`, color('yellow', moment().format()));
+        return console.debug(color('red', '➜'), color('yellow', isGroup ? '[GROUP]' : '[PERSONAL]'), `!${command} | ${sender.id} ${isGroup ? 'FROM ' + formattedTitle : ''}`, color('yellow', moment().format()));
     }
 
     return;
