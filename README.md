@@ -25,13 +25,6 @@
         </a>
             🎊
         </span>
-        <br>
-        <span>🎉
-        <a href="https://paypal.me/rzkytmgr">
-            Paypal.me
-        </a>
-            🎉
-        </span>
     </div>
 </div>
 
@@ -171,7 +164,10 @@ _Default prefix :_ !
 |     !menu      |     OK      |                 Show menu                 |
 |     !rules     |     OK      |              Show Bot Rules               |
 |    !donate     |     OK      |                Show Donate                |
-|     !quran     |     OK      |            Get Qur'an digital             |
+|   !quranayat   |     OK      |            Get Qur'an digital             |
+|  !quransurah   |     OK      |          Get All Ayah in a Surah          |
+|   !murottal    |     OK      |           Get Qur'an Ayah Audio           |
+|    !tafsir     |     OK      |             Get Qur'an Tafsir             |
 |    !quotes     | Coming soon |                     -                     |
 |   !makequote   |     OK      |            Make a image quote             |
 |     !mirip     |     OK      |                     -                     |
