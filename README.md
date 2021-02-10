@@ -62,13 +62,13 @@ Step by step to start the bot :
 
    `cd WhatsApp-Bot`
 
-3. Open directory with your favorit code editor, then Change the `settings.js` code
+3. Open directory with your favorit code editor, then Change the [settings.js](https://github.com/rzkytmgr/WhatsApp-Bot/blob/master/settings.js) code
 
-   - `prefix` - prefix bot commands _(default : !)_
-   - `owner` - owner bot number
-   - `support` - bot group support
+   - [prefix](https://github.com/rzkytmgr/WhatsApp-Bot/blob/d3aa0452ffd22d43b71cc6fae94122769f47d3dd/settings.js#L2) - prefix bot commands _(default : !)_
+   - [owner](https://github.com/rzkytmgr/WhatsApp-Bot/blob/d3aa0452ffd22d43b71cc6fae94122769f47d3dd/settings.js#L3) - owner bot number
+   - [support](https://github.com/rzkytmgr/WhatsApp-Bot/blob/d3aa0452ffd22d43b71cc6fae94122769f47d3dd/settings.js#L4) - bot group support
 
-4. change path to your ffmpeg bin on `./lib/function/youtube.js` on line `23`
+4. change path to your ffmpeg bin on [./lib/function/youtube.js on line 23](https://github.com/rzkytmgr/WhatsApp-Bot/blob/d3aa0452ffd22d43b71cc6fae94122769f47d3dd/lib/function/youtube.js#L23)
 
    ```javascript
    const downloadOptions = {
