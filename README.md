@@ -73,14 +73,10 @@ Step by step to start the bot :
    ```javascript
    const downloadOptions = {
      ffmpegPath: '/usr/bin/ffmpeg', // change this to your ffmpeg bin path
-     outputPath: dir,
-     youtubeVideoQuality: 'highestaudio',
-     queueParallelism: 2,
-     progressTimeout: 2000,
-     allowWebm: false,
+     // ...code here
    };
    ```
-
+   
 5. Install all packages
 
    `npm install`
