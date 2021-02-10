@@ -32,7 +32,6 @@ module.exports = async (client, message) => {
      */
 
     const validMessage = caption ? caption : body;
-
     if (!validMessage || validMessage[0] != botPrefix) return;
 
     const command = validMessage.trim().split(' ')[0].slice(1);
@@ -51,7 +50,7 @@ module.exports = async (client, message) => {
 
     if (isGroup) {
       if (groupMetadata.participants.length < 10 && !botOwner.includes(groupMetadata.owner)) {
-        await client.reply(from, `_⚠️ Ooops... maaf untuk menghidari grup SPAM, bot hanya dapat di gunakan di grup yang mempunyai member lebih dari 7, sedangkan member grup kamu hanya ada *${groupMetadata.participants.length}*_\n\n_Untuk informasi lebih lanjut silahkan tanyakan saya di instagram *@rzkytmgrr*_`, id);
+        await client.reply(from, `_⚠️ Ooops... maaf untuk menghidari grup SPAM, bot hanya dapat di gunakan di grup yang mempunyai member lebih dari 10, sedangkan member grup kamu hanya ada *${groupMetadata.participants.length}*_\n\n_Untuk informasi lebih lanjut silahkan tanyakan saya di instagram *@rzkytmgrr*_`, id);
         return client.leaveGroup(from);
       }
     }
