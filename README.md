@@ -25,6 +25,13 @@
         </a>
             🎊
         </span>
+	<br>
+	<span>🎉
+        <a href="https://paypal.me/rzkytmgr">
+            Paypal
+        </a>
+            🎉
+        </span>
     </div>
 </div>
 
