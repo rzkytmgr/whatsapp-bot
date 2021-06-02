@@ -14,7 +14,7 @@
   "author": "rzkytmgrr",
   "license": "ISC",
   "dependencies": {
-    "@open-wa/wa-automate": "^3.1.0",
+    "@open-wa/wa-automate": "^4.1.0",
     "axios": "^0.21.0",
     "brainly-scraper": "^1.0.3",
     "chalk": "^4.1.0",
