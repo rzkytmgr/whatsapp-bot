@@ -2,7 +2,7 @@ const { create, decryptMedia } = require('@open-wa/wa-automate');
 
 const configObject = {
   sessionId: 'SAD_CLIENT',
-  authTimeout: 0,
+  authTimeout: 60,
   autoRefresh: true,
   cacheEnabled: false,
   chromiumArgs: ['--no-sandbox'],
