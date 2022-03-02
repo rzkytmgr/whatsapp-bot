@@ -7,3 +7,5 @@ SAD_CLIENT.data.json
 **.data.json
 **.node-persist**
 # end managed by open-wa
+
+.vscode
