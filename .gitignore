@@ -1,9 +1,0 @@
-# node modules
-node_modules
-# client session
-SAD_CLIENT.data.json
-
-# managed by open-wa
-**.data.json
-**.node-persist**
-# end managed by open-wa
