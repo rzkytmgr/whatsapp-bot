@@ -1,3 +1,8 @@
+> [!WARNING]
+> **This branch no longer be updated. Currenly we are working in `master` branch. You can take attention on `master` branch for bot update.**
+> 
+> Thank you
+
 <div align="center">
 	<img style="margin-bottom: 20px" src="https://i.ibb.co/Y7y2gjm/Frame-1-3.png" alt="sad" width="250" height="250"/>
     <br>
